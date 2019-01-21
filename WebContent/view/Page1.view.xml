@@ -1,0 +1,15 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="smax.cls07.proj1.controller.Page1"
+		 xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Product List">
+		<content>
+	       <List items="{/Products}">
+	          <items>
+	             <StandardListItem title="{ID}" description="{Description}"
+	             type="Active" press="onItemSelection"
+	             />
+	          </items>
+	       </List>
+		</content>
+	</Page>
+</core:View>

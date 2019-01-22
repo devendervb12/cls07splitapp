@@ -1,7 +1,7 @@
 <core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
 	controllerName = "smax.cls07.proj1.controller.Page2" 	xmlns:f="sap.ui.layout.form"
 	 xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page title="Customer Details">
+	<Page title="Product Details">
 		<content>
 		   	<VBox class="sapUiSmallMargin">
 		<f:SimpleForm id="SimpleFormDisplay354"
@@ -23,9 +23,9 @@
 			singleContainerFullSize="false" >
 			<f:content>
 				<Label text="ID" />
-				<Text text="{ID}" />
+				<Text text="{ID}" id="idId"/>
 				<Label text="Name" />
-				<Text  text="{Name}" />
+				<Text  text="{Name}" id="idName"/>
 				<Label text="Description" />
 				<Text  text="{Description}"/>
 				<Label text="ReleaseDate" />
@@ -43,9 +43,9 @@
 		<footer>
 		<Bar>
 		<contentRight>
-			 <Button text="Create"/>
-		   <Button text="Update"/>
-		   <Button text="Delete"/>
+			 <Button text="Create" press="onCreate"/>
+		   <Button text="Update" press="onUpdate"/>
+		   <Button text="Delete" press="onDelete"/>
 		</contentRight>
 		  
 		 </Bar>  

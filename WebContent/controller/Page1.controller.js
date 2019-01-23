@@ -39,7 +39,8 @@ sap.ui.controller("smax.cls07.proj1.controller.Page1", {
 		oRouter.navTo("forPage2");
 	},*/
 	onItemSelection : function(oEvent){
-		var custId = oEvent.getSource().getTitle()
+		var custId = oEvent.getSource().getTitle();
+		
 		this.getOwnerComponent().getRouter().navTo("forPage2", { pId : custId });
 	}
 

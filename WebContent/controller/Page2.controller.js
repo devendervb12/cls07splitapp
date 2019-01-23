@@ -76,9 +76,11 @@ sap.ui.controller("smax.cls07.proj1.controller.Page2", {
 					}
 					
 					// save data to oModel
-					var url = "proxy/https/services.odata.org/V2/(S(3ldyjbrrbr0rlbmphbs3fgoy))/OData/OData.svc/";
+					/*var url = "proxy/https/services.odata.org/V2/(S(3ldyjbrrbr0rlbmphbs3fgoy))/OData/OData.svc/";
 					var oModel = new sap.ui.model.odata.v2.ODataModel(url);
+				*/	
 					
+				var oModel = 	oDialog.getModel();
 					oModel.create("/Products", data, {
 						success : function(){
 							sap.m.MessageToast.show("Data Created");
@@ -88,6 +90,7 @@ sap.ui.controller("smax.cls07.proj1.controller.Page2", {
 						}
 					});
 					//close the dialog
+					
 					oDialog.close();
 					
 				}
@@ -97,6 +100,10 @@ sap.ui.controller("smax.cls07.proj1.controller.Page2", {
 			]	
 		});
 		
+		// get model from component(manifest)
+		var oModelComp = 	this.getOwnerComponent().getModel();
+		oDialog.setModel(oModelComp);
+	
 		oDialog.open();
 	},
 	
@@ -120,9 +127,11 @@ sap.ui.controller("smax.cls07.proj1.controller.Page2", {
 							Name : oDialog.getContent()[3].getValue()
 					}
 					//save to Model
-					var url = "proxy/https/services.odata.org/V2/(S(3ldyjbrrbr0rlbmphbs3fgoy))/OData/OData.svc/";
+				/*	var url = "proxy/https/services.odata.org/V2/(S(3ldyjbrrbr0rlbmphbs3fgoy))/OData/OData.svc/";
 					var oModel = new sap.ui.model.odata.v2.ODataModel(url);
+				*/	
 					
+					var oModel = oDialog.getModel();
 					oModel.update("/Products("+parseInt(oDialog.getContent()[1].getValue())+")", data, {
 						success : function(){
 							sap.m.MessageToast.show("Data Updated");
@@ -137,14 +146,20 @@ sap.ui.controller("smax.cls07.proj1.controller.Page2", {
 			]
 		});
 		
+		var oModelComp = 	this.getOwnerComponent().getModel();
+		oDialog.setModel(oModelComp);
+	
+		
 		oDialog.open();
 		
 	},
 	
 	onDelete : function(){
-		var url = "proxy/https/services.odata.org/V2/(S(3ldyjbrrbr0rlbmphbs3fgoy))/OData/OData.svc/";
+		/*var url = "proxy/https/services.odata.org/V2/(S(3ldyjbrrbr0rlbmphbs3fgoy))/OData/OData.svc/";
 		var oModel = new sap.ui.model.odata.v2.ODataModel(url);
-	    
+	 */  
+		
+		var oModel = this.getOwnerComponent().getModel();
 		var prodId = parseInt(this.getView().byId("idId").getText());
 		
 		oModel.remove("/Products("+prodId+")",  {

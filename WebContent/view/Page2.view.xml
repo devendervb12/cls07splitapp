@@ -46,8 +46,7 @@
 			 <Button text="Create" press="onCreate"/>
 		   <Button text="Update" press="onUpdate"/>
 		   <Button text="Delete" press="onDelete"/>
-		</contentRight>
-		  
+		</contentRight>	  
 		 </Bar>  
 		</footer>
 	</Page>
